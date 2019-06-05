@@ -1,0 +1,65 @@
+"""
+用计算机计算排列组合公式：
+输入M和N计算C(M，N)
+
+
+m = int (input('m='))   
+n= int (input ('n='))
+fm =1
+for num in range (1,m+1):
+    fm *= num
+fn=1
+for num in range (1,n+1):
+    fn*=num
+fmn = 1
+for num in range(1,m-n+1):
+    fmn *=num
+print(fm//fn//fmn)         
+
+//取整除
+------
+由数学公式可知
+需要计算相应的阶乘
+运用循环 for i in range（）：
+循环条件写完时  需要使用冒号写语句体.
+"""
+
+#Python单行注释（用#号：作用同C语言中的“//”）;
+#多行注释方法
+'''
+1.多行注释
+'''
+
+
+"""
+2.多行注释
+"""
+
+
+
+#Python中定义函数
+def factorial(num):
+    """
+    求阶乘
+    函数名：factorial
+    参数：非负整数
+    返回值： 阶乘结果
+
+    说明：Python的math模块中其实已经有一个factorial函数了，
+    事实上要计算阶乘可以直接使用这个现成的函数而不用自己定义。
+    下面例子中的某些函数其实Python中也是内置了，
+    我们这里是为了讲解函数的定义和使用才把它们又实现了一遍，
+    实际开发中不建议做这种低级的重复性的工作。
+    """
+    result = 1
+    for n in range(1,num+1):
+        result *= n
+    return result
+
+
+print('方法二')
+m = int(input('m='))
+n = int(input('n='))
+
+
+print(factorial(m)//factorial(n)//factorial(m-n))
